@@ -13,7 +13,7 @@ TMUX_TEMPLATE_FILE="tmux_template.sh"
 ui_decoration() {
   source "../ui_components/ui_components.sh"
   border_line 50
-  ui_button_printf "TMUX-Nvim-Session-Maker"
+  ui_button_printf "TMUX--Session-Maker"
   printf "\n"
 }
 
@@ -38,7 +38,7 @@ prompt_user() {
 # Validates variable by testing if directory path exists.
 # Use tab completion when prompted
 # For conditions to be true to exit out of while loop...
-#   EDIT_FILE Directory path MUST exist AND
+#   EDIT_FILE Directory path must exist AND
 #   EDIT_FILE must not end with a trailing '/'
 get_edit_file() {
   prompt_heading "Enter a File to Edit:"

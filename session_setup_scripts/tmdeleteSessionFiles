@@ -7,7 +7,7 @@
 ui_decoration() {
   source "../ui_components/ui_components.sh"
   border_line 50
-  ui_button_printf "killing all running tmux sessions..."
+  ui_button_printf "TMUX-Session-Killer"
   printf "\n"
 }
 
@@ -24,7 +24,7 @@ delete_session_setup_files() {
   list_sessions
   for session in $list_sessions; do
     SESSION_FILE_NAME="../session_names/tm$session"
-    if [[ -f $SESSION_FILE_NAME ]]; then
+    if [[ -f "${SESSION_FILE_NAME}" ]]; then
       prompt_user
     fi
   done
@@ -34,12 +34,12 @@ delete_session_setup_files() {
 
 prompt_user() {
   printf "Delete session setup file:${bold}${italic}${green} %s${normal}\n" \
-    "$(basename "$SESSION_FILE_NAME")"
+    "$(basename "${SESSION_FILE_NAME}")"
   while true; do
     read -n1 -s -r
     case "${REPLY}" in
     [yY])
-      rm "$SESSION_FILE_NAME"
+      rm "${SESSION_FILE_NAME}"
       printf "${italic}File ${bold}${underline}${red}%s${normal}\n" "Deleted"
       break
       ;;
@@ -56,7 +56,7 @@ prompt_user() {
 # Need this in order for relative paths to work
 get_cwd_for_relative_paths() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
-  cd "$SCRIPT_DIR" || exit
+  cd "${SCRIPT_DIR}" || exit
 }
 
 main() {
@@ -64,7 +64,5 @@ main() {
   ui_decoration
   delete_session_setup_files
 }
-# Run main only if there are tmux sessions running
-if [[ -n $(tmux ls) ]]; then
-  main
-fi
+# Run main ONLY if there ARE tmux sessions running
+[[ -n $(tmux ls) ]] && main
