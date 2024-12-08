@@ -1,3 +1,8 @@
+![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge)
+![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
 # Introduction
 
 I wanted a quick way to start a tmux session with windows and splits already
@@ -47,3 +52,5 @@ commands not directly related to user inputs.
   delete the saved set-up-session files
 
 - I use VTR vim-tmux-runner to run code which seems to work well
+
+![GitHub](https://img.shields.io/github/license/roofrack/dotfiles)
