@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Pull in the ansi color codes file
-source "ui_components/ansi_colors.sh"
+source "../ui_components/ansi_colors.sh"
 
 # Returns a random background-color using the array below
 # and the ansi color list above

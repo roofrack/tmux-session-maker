@@ -4,8 +4,9 @@
 # | Prompts user to delete SESSION_FILE_NAME files |
 # -------------------------<robaylard@gmail.com>---
 
+cd "$HOME/bin/tmux-session-maker" || exit
 ui_decoration() {
-  source "ui_components/ui_components.sh"
+  source "../ui_components/ui_components.sh"
   border_line 50
   ui_button_printf "killing all running tmux sessions..."
   printf "\n"
@@ -23,7 +24,7 @@ list_sessions() {
 delete_session_setup_files() {
   list_sessions
   for session in $list_sessions; do
-    SESSION_FILE_NAME="session_names/tm$session"
+    SESSION_FILE_NAME="../session_names/tm$session"
     if [[ -f $SESSION_FILE_NAME ]]; then
       prompt_user
     fi
@@ -52,9 +53,17 @@ prompt_user() {
   done
 }
 
-# Run main only if there are NO running tmux sessions
+# Returns current working directory and cd's into it
+# Need this for relative paths to work
+get_cwd_for_relative_paths() {
+  SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
+  cd "$SCRIPT_DIR" || exit
+}
+
+# Only do the following if there are running tmux sessions
 main() {
   if [[ -n $(tmux ls) ]]; then
+    get_cwd_for_relative_paths
     ui_decoration
     delete_session_setup_files
   fi
