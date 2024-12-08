@@ -3,7 +3,7 @@
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-# Introduction
+# :sparkles: Introduction
 
 I wanted a quick way to start a tmux session with windows and splits already
 sized specific for certain projects, and then to have applications running inside such as nvim,
@@ -28,7 +28,7 @@ TODO: Make the ui more user friendly. It is very quick and easy if you already u
 could be improved to only show the disired user input options rather than all the other stuff such as variables and
 commands not directly related to user inputs.
 
-# Directories & scripts
+# :bulb: Directories & scripts
 
 1. #### session_names directory  
 -    The directory where all the session setup files get saved to which are created when running `tmsetUpNewSession.sh`
@@ -37,20 +37,21 @@ commands not directly related to user inputs.
 
 - `tmsetupNewSession` sets up, saves, and runs the new tmux session setup file  
 
-- `tmdeleteSessionNames.sh` deletes session setup files
+- `tmdeleteSessionNames` deletes session setup files
 
 - `tmux_template.sh` script for molding a new tmux session setup file
 
-# Usage
+# :wrench: Usage
 
-- Just run the executable `tmsetupNewSession.sh` in the terminal
+- Just run the executable `tmsetupNewSession` in the terminal
 
 - Enter a file (use tab completion) in your project to edit
  (the session name and session_file_name are derived from this filename you just entered)  
 
-- run `tmdeleteSessionNames.sh` to terminate all tmux sessions and give the option to
+- run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
   delete the saved set-up-session files
 
 - I use VTR vim-tmux-runner to run code which seems to work well
 
+### :white_check_mark: License
 ![GitHub](https://img.shields.io/github/license/roofrack/dotfiles)
