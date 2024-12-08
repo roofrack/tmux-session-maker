@@ -4,7 +4,6 @@
 # | Prompts user to delete SESSION_FILE_NAME files |
 # -------------------------<robaylard@gmail.com>---
 
-cd "$HOME/bin/tmux-session-maker" || exit
 ui_decoration() {
   source "../ui_components/ui_components.sh"
   border_line 50
@@ -53,7 +52,7 @@ prompt_user() {
   done
 }
 
-# Returns current working directory and cd's into it
+# Returns this scripts directory and cd's into it
 # Need this for relative paths to work
 get_cwd_for_relative_paths() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
