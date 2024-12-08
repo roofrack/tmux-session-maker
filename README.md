@@ -28,6 +28,11 @@ TODO: Make the ui more user friendly. It is very quick and easy if you already u
 could be improved to only show the disired user input options rather than all the other stuff such as variables and
 commands not directly related to user inputs.
 
+# :zap: Requirements
+-tmux
+-nvim
+-vim-tmux-runner VTR
+
 # :bulb: Directories & scripts
 
 1. #### session_names directory  
@@ -45,8 +50,7 @@ commands not directly related to user inputs.
 
 - Just run the executable `tmsetupNewSession` in the terminal
 
-- Enter a file (use tab completion) in your project to edit
- (the session name and session_file_name are derived from this filename you just entered)  
+- Enter a file to edit (use tab completion)
 
 - run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
   delete the saved set-up-session files
