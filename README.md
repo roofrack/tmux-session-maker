@@ -10,7 +10,10 @@ and then have applications running inside such as nvim, a code runner to run cod
 a server, and/or what ever other applications your current project needs.
 
 The setup comes from a premade script file that you will be given the option to edit to get the setup you want.
-Just add/delete the options and applications needed by adding or commenting out lines in the file.
+Just add/delete options and applications needed by adding or commenting out lines in the setup file. If you choose not
+to save/edit this session setup file than tmux opens a REPL to run code. On my system I have a keyboard shortcut setup
+to run code in the tmux pane below.
+
 
 This file can then be run again to reset the session back up after a system reboot or when ever
 the tmux server is killed. To get started just enter a file to edit.
@@ -38,7 +41,7 @@ commands not directly related to user inputs.
 
 2. #### session_setup_scripts directory  
 
-- `tmsetupNewSession` sets up, saves, and runs the new tmux session setup file  
+- `tmsetupNewSession` sets up, gives option to save & edit, and run the new tmux session setup file  
 
 - `tmdeleteSessionNames` deletes session setup files
 
@@ -46,13 +49,13 @@ commands not directly related to user inputs.
 
 ### :wrench: Usage
 
-- Just run the executable `tmsetupNewSession` in the terminal
-
 - Make these files executable and add to the PATH variable (could also add a keyboard shortcut in your WM to execute)
+
+- Run `tmsetupNewSession` in the terminal
 
 - Enter a file to edit (use tab completion)
 
-- run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
+- Run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
   delete the saved set-up-session files
 
 - I use VTR vim-tmux-runner to run code which seems to work well
