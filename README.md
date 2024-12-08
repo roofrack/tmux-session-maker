@@ -28,12 +28,15 @@ TODO: Make the ui more user friendly. It is very quick and easy if you already u
 could be improved to only show the disired user input options rather than all the other stuff such as variables and
 commands not directly related to user inputs.
 
-# :zap: Requirements
--tmux
--nvim
--vim-tmux-runner VTR
+### :zap: Requirements
 
-# :bulb: Directories & scripts
+- tmux
+
+- nvim
+
+- VTR vim-tmux-runner plugin for nvim
+
+### :bulb: Directories & scripts
 
 1. #### session_names directory  
 -    The directory where all the session setup files get saved to which are created when running `tmsetUpNewSession.sh`
@@ -46,9 +49,11 @@ commands not directly related to user inputs.
 
 - `tmux_template.sh` script for molding a new tmux session setup file
 
-# :wrench: Usage
+### :wrench: Usage
 
 - Just run the executable `tmsetupNewSession` in the terminal
+
+- Make this file executable and add to the PATH (add keyboard shortcut to execute)
 
 - Enter a file to edit (use tab completion)
 

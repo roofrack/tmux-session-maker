@@ -53,18 +53,18 @@ prompt_user() {
 }
 
 # Returns this scripts directory path and cd's into it
-# Need this for relative paths to work
+# Need this in order for relative paths to work
 get_cwd_for_relative_paths() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
   cd "$SCRIPT_DIR" || exit
 }
 
-# Only do the following if there are running tmux sessions
 main() {
-  if [[ -n $(tmux ls) ]]; then
-    get_cwd_for_relative_paths
-    ui_decoration
-    delete_session_setup_files
-  fi
+  get_cwd_for_relative_paths
+  ui_decoration
+  delete_session_setup_files
 }
-main
+# Run main only if there are tmux sessions running
+if [[ -n $(tmux ls) ]]; then
+  main
+fi

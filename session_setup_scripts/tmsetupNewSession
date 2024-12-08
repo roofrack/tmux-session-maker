@@ -2,10 +2,9 @@
 #  ---------------------------------------------------------------
 # | Set up a quick & easy REPL using Tmux, Nvim, vim-tmux-runner |
 # --------------------------------------<robaylard@gmail.com>----
-# shellcheck source=/dev/null
 
 # TODO $1 input for EDIT_FILE and use that if exists otherwise go to
-#   prompt_user for entry. Add bash completion for this.
+# prompt_user for entry. Add bash completion for this.
 
 TMUX_TEMPLATE_FILE="tmux_template.sh"
 
@@ -38,14 +37,14 @@ prompt_user() {
 # Returns global EDIT_FILE variable
 # Validates variable by testing if directory path exists.
 # Use tab completion when prompted
-# For both conditions to be true to exit out of while loop...
+# For conditions to be true to exit out of while loop...
 #   EDIT_FILE Directory path MUST exist AND
-#   EDIT_FILE must be a file name and NOT a directory name
+#   EDIT_FILE must not end with a trailing '/'
 get_edit_file() {
   prompt_heading "Enter a File to Edit:"
   while true; do
     prompt_user "$HOME/coding-practice/" " " EDIT_FILE
-    if [[ -d "$(dirname "$EDIT_FILE")" ]] && [[ ! -d $EDIT_FILE ]]; then
+    if [[ -d "$(dirname "$EDIT_FILE")" ]] && [[ ! "${EDIT_FILE: -1}" == "/" ]]; then
       break
     fi
   done
@@ -97,7 +96,7 @@ build_repl_session() {
 }
 
 # Called by the build_custom_session function
-#   Builds and returns a new executable file used to start a tmux session
+#   Builds and returns new SESSION_FILE_NAME executable to start a tmux session
 #   Not sure if its ok to do chmod inside script. Probably bad.
 append_text() {
   local append_lines=(
@@ -129,13 +128,14 @@ prompt_user_to_save_session_file() {
       build_repl_session
       break
       ;;
-    *) echo "enter y or n" ;;
+    # *) echo "enter y or n" ;;
+    *) printf "%s\n" "enter y or n" ;;
     esac
   done
 }
 
 # Returns this scripts directory path and cd's into it
-# Need this for relative paths to work
+# Need this in order for relative paths to work
 get_cwd_for_relative_paths() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
   cd "$SCRIPT_DIR" || exit
