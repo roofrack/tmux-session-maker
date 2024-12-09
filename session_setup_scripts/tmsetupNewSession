@@ -13,7 +13,7 @@ TMUX_TEMPLATE_FILE="tmux_template.sh"
 ui_decoration() {
   source "../ui_components/ui_components.sh"
   border_line 50
-  ui_button_printf "TMUX--Session-Maker"
+  ui_button_printf "TMUX-Session-Maker"
   printf "\n"
 }
 

@@ -3,10 +3,10 @@
 ![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-# :sparkles: Introduction
+### :sparkles: Introduction
 
 A quick way to start a tmux session with windows and splits already sized specifically for certain projects
-and then have applications running inside such as nvim, a code runner to run code in the split pane below or beside,
+and then have applications running inside such as nvim, a code runner to run code in a split pane.
 a server, and/or what ever other applications your current project needs.
 
 The setup comes from a premade script file that you will be given the option to edit to get the setup you want.
