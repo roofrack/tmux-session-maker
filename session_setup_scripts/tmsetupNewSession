@@ -50,7 +50,7 @@ get_edit_file() {
   done
 }
 
-# Use the EDIT_FILE variable to build & Return:
+# Use EDIT_FILE to build & Return:
 #   DIRECTORY variable
 #   SESSION_NAME variable
 #   SESSION_FILE_NAME variable
