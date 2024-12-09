@@ -3,8 +3,9 @@
 # Pull in the ansi color codes file
 source "../ui_components/ansi_colors.sh"
 
-# Returns a random background-color using the array below
-# and the ansi color list above
+# Returns:
+#   random background-color using the array below
+#   and the ansi color list above
 bg_color_picker() {
   local background_colors=(
     "$BLACK" "$RED" "$GREEN" "$ORANGE" "$BLUE" "$PURPLE" "$AQUA"
@@ -16,7 +17,8 @@ bg_color_picker() {
   bg_color="${background_colors[$random_number]}" # choose a color using the random number from above as the index
 }
 
-# Returns kind of a 'border' using the ansi escape code for underline
+# Returns:
+#   kind of a 'border' using the ansi escape code for underline
 # Arguments:
 #   accepts a number for how many spaces wide the border should be
 #   defaults to 50 if no argument supplied
@@ -25,7 +27,8 @@ border_line() {
   printf "${darkgray}${underline}%*s${normal}\n" "$border_length"
 }
 
-# Returns a little button looking title box thingy
+# Returns:
+#   a little button looking title box thingy
 # Arguments:
 #   string as a user input for the button thingy
 # Calls the bg_color_picker function

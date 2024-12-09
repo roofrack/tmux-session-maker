@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # --------------------------------------------------
-# | Kills tmux server ending all sessions          |
-# | Prompts user to delete SESSION_FILE_NAME files |
+#   Kills tmux server ending all sessions          |
+#   Prompts user to delete SESSION_FILE_NAME files |
 # -------------------------<robaylard@gmail.com>---
 
 ui_decoration() {
@@ -11,9 +11,10 @@ ui_decoration() {
   printf "\n"
 }
 
-# Returns a list of all running tmux sessions
-# The F formats `tmux list-sessions` so only the session name shows and not all
-#   the other window stuff. (see man tmux)
+# Returns:
+#   list of all running tmux sessions
+#   The F formats `tmux list-sessions` so only the session name shows and not all
+#     the other window stuff. (see man tmux)
 list_sessions() {
   list_sessions=$(tmux list-sessions -F "#{session_name}")
 }
@@ -52,8 +53,9 @@ prompt_user() {
   done
 }
 
-# Returns this scripts directory path and cd's into it
-# Need this in order for relative paths to work
+# Returns:
+#   this scripts directory path and cd into it
+#   Need this in order for relative paths to work
 get_cwd_for_relative_paths() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
   cd "${SCRIPT_DIR}" || exit

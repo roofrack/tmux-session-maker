@@ -11,8 +11,8 @@ a server, and/or what ever other applications your current project needs.
 
 The setup comes from a premade script file that you will be given the option to edit to get the setup you want.
 Just add/delete options and applications needed by adding or commenting out lines in this setup file. If you choose not
-to save/edit this session setup file than tmux opens a REPL to run code. On my system I have a keyboard shortcut setup
-to run code in the tmux pane below.
+to save/edit this session setup file than tmux opens a REPL to run code. Create a keyboard shortcut in nvim to run
+code in the adjacent tmux pane.
 
 
 The setup file can then be run again to reset the session back up after a system reboot or when ever
@@ -45,7 +45,7 @@ session setup files and tmux sessions using these two scripts.
 
 ### :wrench: Usage
 
-- Make these files executable and add to the PATH variable (could also add a keyboard shortcut in your WM to execute)
+- Make these scripts executable and add them to your PATH variable (could also add a keyboard shortcut in your WM to execute)
 
 - Run `tmsetupNewSession` in the terminal
 
