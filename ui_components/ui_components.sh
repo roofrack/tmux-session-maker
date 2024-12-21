@@ -5,7 +5,7 @@ source "../ui_components/ansi_colors.sh"
 
 # Returns:
 #   random background-color using the array below
-#   and the ansi color list above
+#     and the ansi color list above
 bg_color_picker() {
   local background_colors=(
     "$BLACK" "$RED" "$GREEN" "$ORANGE" "$BLUE" "$PURPLE" "$AQUA"

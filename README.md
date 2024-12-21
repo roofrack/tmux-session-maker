@@ -45,11 +45,11 @@ session setup files and tmux sessions using these two scripts.
 
 ### :wrench: Usage
 
-- Make these scripts executable and add them to your PATH variable (could also add a keyboard shortcut in your WM to execute)
+- Make these scripts executable and add them to your PATH variable (could also add alias in .bashrc execute)
 
 - Run `tmsetupNewSession` in the terminal
 
-- Enter a file from your project that you are working on for the REPL (use tab completion)
+- Enter a file to edit from your project (use tab completion)
 
 - Run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
   delete the saved set-up-session files

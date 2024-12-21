@@ -1,8 +1,8 @@
 #!/usr/bin/bash
-# --------------------------------------------------
-#   Kills tmux server ending all sessions          |
-#   Prompts user to delete SESSION_FILE_NAME files |
-# -------------------------<robaylard@gmail.com>---
+# ---------------------------------------------------
+#   -Kills tmux server ending all sessions          |
+#   -Prompts user to delete SESSION_FILE_NAME files |
+# --------------------------<robaylard@gmail.com>---
 
 ui_decoration() {
   source "../ui_components/ui_components.sh"
@@ -12,9 +12,9 @@ ui_decoration() {
 }
 
 # Returns:
-#   list of all running tmux sessions
-#     The F formats `tmux list-sessions` so only the session name shows and not all
-#      the other window stuff. (see man tmux)
+#   List of all running tmux sessions
+#     The F formats `tmux list-sessions` so only the session name shows and
+#       not all the other window stuff. (see man tmux)
 list_sessions() {
   list_sessions=$(tmux list-sessions -F "#{session_name}")
 }
@@ -39,11 +39,13 @@ prompt_user() {
     case "${REPLY}" in
     [yY])
       rm "${SESSION_FILE_NAME}"
-      printf "${italic}File ${bold}${underline}${red}%s${normal}\n" "Deleted"
+      printf "${italic}File ${bold}${underline}${red}%s${normal} %s\n" \
+        "Deleted" "& all Sessions Terminated"
       break
       ;;
     [nN])
-      printf "${italic}File ${bold}${underline}${blue}%s${normal}\n" "Saved"
+      printf "${italic}File ${bold}${underline}${blue}%s${normal} %s\n" \
+        "Saved" "& all Sessions Terminated"
       break
       ;;
     *) echo "enter y or n" ;;
@@ -52,8 +54,8 @@ prompt_user() {
 }
 
 # Returns:
-#   this scripts directory path and cd into it
-#   Need this in order for relative paths to work
+#   This scripts directory path and then cd's into it
+#     Need this in order for relative paths to work
 get_cwd_for_relative_paths() {
   SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)"
   cd "${SCRIPT_DIR}" || exit
