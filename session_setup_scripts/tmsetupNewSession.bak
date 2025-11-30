@@ -51,11 +51,6 @@ get_edit_file() {
   done
 }
 
-enter_a_session_name() {
-  prompt_heading "Enter a name for current tmux session:"
-
-}
-
 # Use EDIT_FILE to build & Return:
 #   DIRECTORY variable
 #   SESSION_NAME variable

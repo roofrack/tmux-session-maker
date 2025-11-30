@@ -1,0 +1,15 @@
+TODOS:
+------
+
+Some problems with this tmux set up script...
+
+1. Rust directory/file structure uses ../src/main.rs and that would be the EDIT_FILE for each session.
+
+2. So when if want multiple rust tmux attachments it will always connect to the 
+   session labeled src-main. 
+
+3. Could manually edit the SESSION_NAME variable and then change the generated filename.
+   Must do that or it will default to the first src-main session.
+
+4. Or... could add some code to prompt the user for a SESSION_NAME and that would solve 
+   the problem but then its more typing for the user. I just wanted a rapid quick setup for the user.
