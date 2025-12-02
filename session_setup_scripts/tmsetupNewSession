@@ -18,25 +18,25 @@ ui_decoration() {
   printf "\n"
 }
 
-# parameter: string argument
+# Parameter: string argument
 prompt_heading() {
-  printf "${bold}${purple}%s${normal}\n" "$1"
+  printf "${bold}${purple}%s ${normal}" "$1"
 }
 
 # Return:
 #   user input variable
 # Parameters:
-#   1. inserts placeholder text for '-i'
-#   2. prompt string
-#   3. enter a variable name
-# -i insert text at beginning of prompt, -r not sure why, -n 1 Hotkey,
-# -e gives readline file completion in prompt, -p prompt \
-# need the " " with the -p otherwise it wont show the input arrow thingy
+#  $1 inserts placeholder text for '-i' (for adding filepath before the prompt string)
+#  $2 prompt string
+#  $3 enter a variable name
+#  -i insert text at beginning of prompt, -r not sure why, -n 1 Hotkey,
+#  -e gives readline file completion in prompt,
+#  -p prompt need the " " with the -p otherwise it wont show the input arrow thingy
 prompt_user() {
   read -i "$1" -r -e -p "$2" "$3"
 }
 
-# Return;
+# Return:
 #   EDIT_FILE variable
 # For conditions to be true to exit out of while loop...
 #   EDIT_FILE directory path must exist AND
@@ -51,24 +51,35 @@ get_edit_file() {
   done
 }
 
-enter_a_session_name() {
-  prompt_heading "Enter a name for current tmux session:"
-
+# Returns:
+#   DIRECTORY variable
+#   SESSION_NAME variable
+#   SESSION_FILE_NAME variable
+# Note:
+#   need to use echo here or it wont work (it wont get assigned)
+build_session_name_variable() {
+  prompt_heading "Enter a Name for Current Tmux Session:"
+  DIRECTORY="$(dirname "$EDIT_FILE")"
+  SESSION_NAME="$(read -i -e -r -p "" SESSION_NAME && echo "$SESSION_NAME")"
+  SESSION_FILE_NAME="../session_names/tm${SESSION_NAME}"
 }
 
+# Could use this version of build_session_name_variable to auto assign the
+# SESSION_NAME variable without the need to have user input. But some of
+# session names end up being the same.
 # Use EDIT_FILE to build & Return:
 #   DIRECTORY variable
 #   SESSION_NAME variable
 #   SESSION_FILE_NAME variable
-build_session_name_variable() {
-  DIRECTORY="$(dirname "$EDIT_FILE")"
-  local file_name
-  local dir_name
-  file_name=$(basename "${EDIT_FILE%.*}")
-  dir_name="$(basename "$DIRECTORY")"
-  SESSION_NAME="${dir_name}_${file_name}"
-  SESSION_FILE_NAME="../session_names/tm${SESSION_NAME}"
-}
+# build_session_name_variable() {
+#   DIRECTORY="$(dirname "$EDIT_FILE")"
+#   local file_name
+#   local dir_name
+#   file_name=$(basename "${EDIT_FILE%.*}")
+#   dir_name="$(basename "$DIRECTORY")"
+#   SESSION_NAME="${dir_name}_${file_name}"
+#   SESSION_FILE_NAME="../session_names/tm${SESSION_NAME}"
+# }
 
 # Returns:
 #   TMUX session
@@ -123,8 +134,9 @@ append_text() {
 }
 
 prompt_user_to_save_session_file() {
-  printf "Edit and Save Custom Session:${bold}${italic}${green} %s${normal}\n" \
-    "$(basename "$SESSION_FILE_NAME")"
+  prompt_heading "Edit and Save Custom Session:"
+  printf "${bold}${italic}${green}%s ${normal}" "$(basename "$SESSION_FILE_NAME")"
+
   while true; do
     read -n1 -s -r
     case "${REPLY}" in
