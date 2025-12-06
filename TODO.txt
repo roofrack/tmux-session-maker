@@ -17,3 +17,6 @@ Some problems with this tmux set up script...
 
 2. -The directories and filenames must already exist. Maybe this is good so things do not get overwritten.
    -Could add an option to generate the directory or file but will leave it as is for now.
+
+3. -Change the whole edit setup file thingy so the user doesnt see that. Add a TUI maybe? I dunno. It works
+    good for me to edit this file quickly in nvim by commenting out things.

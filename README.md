@@ -6,14 +6,13 @@
 ### :sparkles: Introduction
 
 A quick way to start a tmux session with windows and splits already sized specifically for certain projects
-and then have applications running inside such as nvim, a code runner to run code in a split pane.
+and then have applications running inside such as nvim, a code runner to run code in a split pane,
 a server, and/or what ever other applications your current project needs.
 
-The setup comes from a premade script file that you will be given the option to edit to get the setup you want.
+The setup comes from a premade script file. Edit this file to make the setup customized to however you want.
 Just add/delete options and applications needed by adding or commenting out lines in this setup file. If you choose not
 to save/edit this session setup file than tmux opens a REPL to run code. Create a keyboard shortcut using the VTR plugin 
 in nvim to run code in the adjacent tmux pane.
-
 
 The setup file can then be run again to reset the session back up after a system reboot or when ever
 the tmux server is killed. To get started just enter a file to edit.
