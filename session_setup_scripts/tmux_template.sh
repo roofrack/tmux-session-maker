@@ -9,6 +9,8 @@ template_settings() {
   tmux new-session -d -s "$SESSION_NAME" -n "$WINDOW_ONE_NAME" -c "$DIRECTORY"
   tmux split-window -t "$SESSION_NAME":"$WINDOW_ONE_NAME" -v -c "$DIRECTORY"
   # tmux resize-pane -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0 -D 5
+  # tmux split-window -t "$SESSION_NAME":"$WINDOW_ONE_NAME" -h -c "$DIRECTORY"
+  # tmux resize-pane -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0 -R 25
   tmux resize-pane -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0 -D 10
   tmux new-window -t "$SESSION_NAME" -n "$WINDOW_TWO_NAME" -c "$DIRECTORY"
   # tmux new-window -t "$SESSION_NAME" -n "$WINDOW_THREE" -c "$DIRECTORY"
@@ -18,6 +20,8 @@ template_settings() {
   tmux send-keys -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0 "vim $EDIT_FILE" Enter
   # tmux send-keys -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0 "vim ." Enter
   tmux send-keys -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0 ":VtrAttachToPane 1" Enter
+  # tmux send-keys -t "$SESSION_NAME":"$WINDOW_ONE_NAME".1 "npm run dev" Enter
+  # tmux send-keys -t "$SESSION_NAME":"$WINDOW_ONE_NAME".2 "podman start -ai -l" Enter
   # ----------------------------------------------------------------------------
   # tmux send-keys -t "$SESSION_NAME":"$WINDOW_TWO_NAME".0 "$HOME/.cargo/bin/bacon" Enter
   # tmux send-keys -t "$SESSION_NAME":"$WINDOW_ONE_NAME".1 "enter command here" Enter

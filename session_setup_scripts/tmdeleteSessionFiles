@@ -14,7 +14,7 @@ ui_decoration() {
 # Returns:
 #   List of all running tmux sessions
 #     The F formats `tmux list-sessions` so only the session name shows and
-#       not all the other window stuff. (see man tmux)
+#     not all the other window stuff. (see man tmux)
 list_sessions() {
   list_sessions=$(tmux list-sessions -F "#{session_name}")
 }
