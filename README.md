@@ -17,14 +17,14 @@ and then have applications already running inside.
 
 - tmux
 
-- nvim
+- nvim (maybe?)
 
-- VTR vim-tmux-runner plugin for nvim
+- VTR vim-tmux-runner plugin for nvim (maybe?)
 
 ### :bulb: Directories & scripts
 
 1. #### session_names directory  
--    The directory where all the setup-session files get saved to which are created when running `tmsetUpNewSession.sh`
+-    The directory where all the setup-session files get saved (which were created when running `tmsetUpNewSession.sh`)
 
 2. #### session_setup_scripts directory  
 
@@ -32,7 +32,7 @@ and then have applications already running inside.
 
 - `tmdeleteSessionNames` kills running tmux sessions & deletes setup-session files
 
-- `tmux_template.sh` file containing different functions for multiple tmux layouts
+- `tmux_template.sh` file containing different functions for custom tmux layouts
 
 ### :wrench: Usage
 
@@ -49,7 +49,7 @@ and then have applications already running inside.
 - Run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
   delete the saved setup-session files
 
-- I use VTR vim-tmux-runner to run code which seems to work well
+- VTR vim-tmux-runner to run code seems to work well (old but works)
 
 ### :white_check_mark: License
 ![GitHub](https://img.shields.io/github/license/roofrack/dotfiles)
