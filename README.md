@@ -7,7 +7,7 @@
 
 This utility generates and runs a file for starting a custom tmux session.
 This generated setup-session file can then be re-executed to restart the session back up after a system reboot
-or whenever the tmux server is killed. Edit the darn file to customize setup further.
+or whenever the tmux server is killed. Edit the darn file to customize your setup further.
 
 A quick, easy way to start/restart tmux sessions with windows and splits sized specifically for certain projects
 and then have applications already running inside.
@@ -42,11 +42,11 @@ and then have applications already running inside.
 
 - Use `j/k` & `Enter` to select an initial tmux layout
 
-- Enter a file to edit from your project (use tab completion) & a Session Name
+- Enter a file to edit from your project (use tab completion) & a name for your tmux session
 
 - To restart a custom tmux session execute the saved setup-session file
 
-- Type `tm + tab complete` to show available setup-session files (if added to path variable)
+- Type `tm + tab complete` to show available setup-session files (if added to `PATH` variable)
 
 - Run `tmdeleteSessionNames` to terminate all tmux sessions and give the option to
   delete the saved setup-session files
