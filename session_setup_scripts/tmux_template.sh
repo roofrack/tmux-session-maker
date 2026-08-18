@@ -1,3 +1,8 @@
+# Layouts for building the setup-session file.
+# These get called by the tmsetupNewSession script.
+# Add more functions here and edit to get the desired initial layout.
+# Then once the setup-session file is created can edit that one for a more specific setup.
+
 repl_setup() {
   WINDOW_ONE_NAME="editor"
   WINDOW_TWO_NAME="compiler"
@@ -40,7 +45,7 @@ reattach_or_start_session() {
       "is already running..."
     tmux attach-session -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0
   else
-    $selected_tmux_layout
+    "$selected_tmux_layout"
     tmux attach-session -t "$SESSION_NAME":"$WINDOW_ONE_NAME".0
   fi
 }

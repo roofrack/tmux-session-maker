@@ -17,7 +17,7 @@ the tmux server is killed.
 
 An option will be given to delete session setup files (if they exist) whenever the tmux kill-server command is run
 (which I have saved as an alias 'tka' in .bashrc 'tmux kill all'). Its very quick and easy to set up and delete
-session setup files and tmux sessions using these two scripts.
+setup-session files and tmux sessions using these two scripts.
 
 ### :zap: Requirements
 

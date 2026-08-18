@@ -1,6 +1,7 @@
 #!/bin/bash
 #  ----------------------------------------------------------------
 # | -Set up a quick & easy REPL using Tmux, Nvim, vim-tmux-runner |
+# | -Create multiple setups                                       |
 # ----------------------------------------<robaylard@gmail.com>---
 # shellcheck source=/dev/null
 clear # Clear the terminal exactly ONCE at startup
