@@ -5,19 +5,13 @@
 
 ### :sparkles: Introduction
 
-A quick way to start a tmux session with windows and splits already sized specifically for certain projects
-and then have applications running inside such as nvim, a code runner to run code in a split pane,
-a server, and/or what ever other applications your current project needs.
+This utility generates and runs a file for starting a custom tmux session. Edit file to customize setup further.
+This generated setup-session file can then be re-executed to restart the session back up after a system reboot
+or whenever the tmux server is killed.
 
-This utility generates an executable setup-session file. Edit this file to make the setup customized to however you want.
-Just add/delete options and applications needed by adding or commenting out lines in this setup file.
+A quick and easy way to start/restart a tmux session with windows and splits sized specifically for certain projects
+and then have applications already running inside.
 
-The setup-session file can then be run again to restart the session back up after a system reboot or when ever
-the tmux server is killed.
-
-An option will be given to delete session setup files (if they exist) whenever the tmux kill-server command is run
-(which I have saved as an alias 'tka' in .bashrc 'tmux kill all'). Its very quick and easy to set up and delete
-setup-session files and tmux sessions using these two scripts.
 
 ### :zap: Requirements
 

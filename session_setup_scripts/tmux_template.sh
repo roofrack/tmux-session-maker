@@ -36,7 +36,7 @@ opencode_setup() {
 #
 #
 #
-# Rob, you need this test here for when running this file as a stand alone script.
+# Need this test here for when running this file as a stand alone script.
 # It will either re-attach to an already running tmux session OR will
 # start up a session using the generated session file.
 reattach_or_start_session() {
