@@ -5,9 +5,9 @@
 
 ### :sparkles: Introduction
 
-This utility generates and runs a file for starting a custom tmux session. Edit file to customize setup further.
+This utility generates and runs a file for starting a custom tmux session.
 This generated setup-session file can then be re-executed to restart the session back up after a system reboot
-or whenever the tmux server is killed.
+or whenever the tmux server is killed. Edit the darn file to customize setup further.
 
 A quick and easy way to start/restart a tmux session with windows and splits sized specifically for certain projects
 and then have applications already running inside.
@@ -32,7 +32,7 @@ and then have applications already running inside.
 
 - `tmdeleteSessionNames` kills running tmux sessions & deletes setup-session files
 
-- `tmux_template.sh` file containing different functions for custom tmux layouts
+- `tmux_template.sh` file containing different functions for initial custom tmux layouts
 
 ### :wrench: Usage
 

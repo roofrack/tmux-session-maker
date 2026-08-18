@@ -111,12 +111,12 @@ draw_menu() {
 }
 
 # Returns:
-#   selected_tmux_layout Variable
+#   `selected_tmux_layout` Variable
 # Calls:
 #   draw_menu() is called everytime j/k key pressed and
 #   then the 'SELECTED' variable will increment up/down by 1
-# Break:
-#   The while loop ends when 'Enter' key is pressed.
+# For condition to be true to exit out of while loop:
+#   press 'Enter' key
 get_tmux_layout() {
   echo -ne "\e[?25l"             # Hide cursor
   trap 'echo -ne "\e[?25h"' EXIT # Show cursor
