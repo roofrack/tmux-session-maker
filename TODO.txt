@@ -11,12 +11,32 @@ Some problems with this tmux set up script...
     Must do that or it will default to the first src-main session.
    -Or... could add some code to prompt the user for a SESSION_NAME and that would solve 
     the problem but then its more typing for the user. I just wanted a rapid quick setup for the user.
+- NOTE: 
+    UPDATE:
+      I have added enter a session name to the setup script so fixed the above issue.
 
-   - NOTE: UPDATE: I have added enter a session name to the setup script so fixed the above issue.
 
-
-2. -The directories and filenames must already exist. Maybe this is good so things do not get overwritten.
-   -Could add an option to generate the directory or file but will leave it as is for now.
+2. -The directories must already exist. Maybe this is good so things do not get overwritten.
+   -Could add an option to generate the directory but will leave it as is for now.
 
 3. -Change the whole edit setup file thingy so the user doesnt see that. Add a TUI maybe? I dunno. It works
     good for me to edit this file quickly in nvim by commenting out things.
+
+    Looking at making a better setup file to improve the point 3 above...
+
+    So all this program does is asks the user for a file name to initially edit in neovim running in a tmux window,
+    a tmux session name, and then prepends those to a tmux setup script. 
+    I want that script to be easier to understand. So how can I do that? Options?
+    1) Add a tui like looking thing:
+      _______________________________________
+      |           Tmux-Session-Maker         |
+      ----------------------------------------
+      
+      1. Repl
+      2. Webdev
+      3. Database 
+
+      After picking one everything needed gets appended to setup file.
+      
+ - Update:
+        I have added this now

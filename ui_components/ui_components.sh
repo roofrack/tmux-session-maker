@@ -23,7 +23,8 @@ bg_color_picker() {
 #   accepts a number for how many spaces wide the border should be
 #   defaults to 50 if no argument supplied
 border_line() {
-  local border_length="${1:-50}"
+  # local border_length="${1:-50}"
+  local border_length="${1:-64}"
   printf "${darkgray}${underline}%*s${normal}\n" "$border_length"
 }
 
@@ -38,7 +39,8 @@ ui_button_printf() {
   local input_text=$1
   if [[ -z $input_text ]]; then input_text="Hey Enter Some Input Text Here"; fi
   local text_length=${#input_text}
-  local indent_spaces="$(((50 - text_length) / 2))"
+  # local indent_spaces="$(((50 - text_length) / 2))"
+  local indent_spaces="$(((64 - text_length) / 2))"
   printf "\n"
   printf "%*s$bold${bg_color}%*s${normal}\n" $indent_spaces "" $((text_length + 2)) ""
   printf "%*s${bold}${bg_color} %*s ${normal}\n" $indent_spaces "" "$text_length" "$input_text"
