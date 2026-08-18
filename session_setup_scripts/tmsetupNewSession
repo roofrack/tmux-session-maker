@@ -133,9 +133,9 @@ get_tmux_layout() {
       ;;
     "") # Enter key
       selected_tmux_layout="${OPTIONS[$SELECTED]}"
-      # if [[ $selected_tmux_layout == "Exit" ]]; then
-      #   exit 0 # this also kills the terminal so I'm not using for now
-      # fi
+      if [[ $selected_tmux_layout == "Exit" ]]; then
+        exit 0 # to use this make the script executable. Otherwise it will kill terminal.
+      fi
       break
       ;;
     esac
