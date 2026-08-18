@@ -40,7 +40,9 @@ and then have applications already running inside.
 
 - Run `tmsetupNewSession` in the terminal
 
-- Enter a file to edit from your project (use tab completion)
+- use `j/k` and then `Enter` to select a initial tmux layout
+
+- Enter a file to edit from your project (use tab completion) & a Session Name
 
 - To restart a custom tmux session execute the saved setup-session file
 
